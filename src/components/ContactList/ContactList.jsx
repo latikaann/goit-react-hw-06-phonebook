@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteContact } from '../../redux/slice';
 
 const ContactList = () => {
-  console.log(deleteContact);
   const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter);
   const dispatch = useDispatch();

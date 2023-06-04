@@ -18,32 +18,19 @@ const slice = createSlice({
       ...state,
       contacts: [...state.contacts, { ...action.payload }],
     }),
-  },
-  deleteContact: (state, action) => {
-    return {
-      ...state,
-      contacts: state.contacts.filter(contact => contact.id !== action.payload),
-    };
-  },
-  setFilter: (state, action) => {
-    return (state = action.payload);
+    deleteContact: (state, action) => {
+      return {
+        ...state,
+        contacts: state.contacts.filter(
+          contact => contact.id !== action.payload
+        ),
+      };
+    },
+    setFilter: (state, action) => {
+      return (state = action.payload);
+    },
   },
 });
 
 export const { addContact, deleteContact, setFilter } = slice.actions;
 export const reducer = slice.reducer;
-
-// export const reducer = createReducer(initialState, {
-//   [addContact]: (state, action) => ({
-//     ...state,
-//     contacts: [...state.contacts, { ...action.payload }],
-//   }),
-//   [deleteContact]: (state, action) => ({
-//     ...state,
-//     contacts: state.contacts.filter(contact => contact.id !== action.payload),
-//   }),
-//   [setFilter]: (state, action) => ({
-//     ...state,
-//     filter: action.payload,
-//   }),
-// });
