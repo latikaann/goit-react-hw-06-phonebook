@@ -26,15 +26,12 @@ const slice = createSlice({
     };
   },
   setFilter: (state, action) => {
-    return {
-      ...state,
-      filter: action.payload,
-    };
+    return (state = action.payload);
   },
 });
 
-export const reducer = slice.reducer;
 export const { addContact, deleteContact, setFilter } = slice.actions;
+export const reducer = slice.reducer;
 
 // export const reducer = createReducer(initialState, {
 //   [addContact]: (state, action) => ({
