@@ -27,7 +27,7 @@ const slice = createSlice({
       };
     },
     setFilter: (state, action) => {
-      return (state = action.payload);
+      state.filter = action.payload;
     },
   },
 });
